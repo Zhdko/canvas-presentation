@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h1>Canvas</h1>
+					<p class="subtitle" style="text-align: center;">Low-level graphics API for rendering pixels in the browser</p>
+				</section>
+				<section data-auto-animate>
+					<h2>Canvas is commonly used for</h2>
+				</section>
+				<section class="section" data-auto-animate>
+					<h2 style="font-size: 55px;">Canvas is commonly used for</h2>
+					<p class="subtitle">animations & visual effects</p>
+					<div style="display: flex; gap: 10px; margin-top: 20px;">
+						<div class="video-container video-container_opened">
+							<video class="video" src="assets/video/example_1.mov" data-autoplay></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_2.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_3.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_4.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_5.mov"></video>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2 style="font-size: 55px;">Canvas is commonly used for</h2>
+					<p class="subtitle">interactive data visualizations and charts</p>
+					<div style="display: flex; gap: 10px; margin-top: 20px;">
+						<div class="video-container">
+							<video class="video" src="assets/video/example_1.mov"></video>
+						</div>
+						<div class="video-container video-container_opened">
+							<video class="video" src="assets/video/example_2.mov" data-autoplay></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_3.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_4.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_5.mov"></video>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2 style="font-size: 55px;">Canvas is commonly used for</h2>
+					<p class="subtitle">drawing tools and graphic editors</p>
+					<div style="display: flex; gap: 10px; margin-top: 20px;">
+						<div class="video-container">
+							<video class="video" src="assets/video/example_1.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_2.mov"></video>
+						</div>
+						<div class="video-container video-container_opened">
+							<video class="video" src="assets/video/example_3.mov" data-autoplay></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_4.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_5.mov"></video>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h2 style="font-size: 55px;">Canvas is commonly used for</h2>
+					<p class="subtitle">3D graphics</p>
+					<div style="display: flex; gap: 10px; margin-top: 20px;">
+						<div class="video-container">
+							<video class="video" src="assets/video/example_1.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_2.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_3.mov"></video>
+						</div>
+						<div class="video-container video-container_opened">
+							<video class="video" src="assets/video/example_4.mov" data-autoplay></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_5.mov"></video>
+						</div>
+					</div>
+
+				</section>
+				<section data-auto-animate>
+					<h2 style="font-size: 55px;">Canvas is commonly used for</h2>
+					<p class="subtitle">2D games</p>
+					<div style="display: flex; gap: 10px; margin-top: 20px;">
+						<div class="video-container">
+							<video class="video" src="assets/video/example_1.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_2.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_3.mov"></video>
+						</div>
+						<div class="video-container">
+							<video class="video" src="assets/video/example_4.mov"></video>
+						</div>
+						<div class="video-container video-container_opened">
+							<video class="video" src="assets/video/example_5.mov" data-autoplay></video>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Basic usage</h3>
+					<p class="subtitle" style="text-align: center;">
+						how drawing works in practice
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h5>HTML Canvas — low-level rendering API</h5>
+					<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="1">
+							const canvas = document.createElement('canvas');
+							const context = canvas.getContext('2d');
+						</code>
+					</pre>
+					<ul class="fragment">
+						<li class="fragment fade-left">&lt;canvas&gt; is a single HTML element</li>
+						<li class="fragment fade-left">it renders pixels, not DOM nodes</li>
+						<li class="fragment fade-left">all drawing is done via JavaScript</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h5>Rendering Context</h5>
+					<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="2">
+							const canvas = document.createElement('canvas');
+							const context = canvas.getContext('2d');
+						</code>
+					</pre>
+					<ul>
+						<li class="fragment fade-left">all rendering goes through a context</li>
+						<li class="fragment fade-left">the context defines available drawing capabilities</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h5>Context types</h5>
+					<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="2">
+							const canvas = document.createElement('canvas');
+							const context = canvas.getContext('2d');
+						</code>
+					</pre>
+					<ul>
+						<li class="fragment fade-left">2d — shapes, text, images, animations</li>
+						<li class="fragment fade-left">webgl / webgl2 — 3D graphics, GPU rendering</li>
+						<li class="fragment fade-left">bitmaprenderer — specific low-level use cases</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>drawing model</h3>
+					<ul>
+						<li class="fragment fade-left">canvas uses a path-based drawing model</li>
+						<li class="fragment fade-left">paths are built step by step</li>
+						<li class="fragment fade-left">rendering happens only on fill or stroke</li>
+					</ul>
+				</section>
+				<section>
+					<h3>drawing primitives</h3>
+					<ul>
+						<li class="fragment fade-left">canvas is based on primitive operations</li>
+						<li class="fragment fade-left">complex graphics are built from simple shapes</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>rectangle</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="3">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.rect(10, 20, 150, 100); // add a rectangle to the current path
+							ctx.fillStyle ='blue'; // changing the fill color of a shape
+							ctx.fill(); // render the path
+						</code>
+					</pre>
+						<img src="./assets/images/rect_1.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>rectangle</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="4">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.rect(10, 20, 150, 100); // add a rectangle to the current path
+							ctx.fillStyle = 'blue'; // changing the fill color of a shape
+							ctx.fill(); // render the path
+						</code>
+					</pre>
+						<img src="./assets/images/rect_2.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>rectangle</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="5">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.rect(10, 20, 150, 100); // add a rectangle to the current path
+							ctx.fillStyle ='blue'; // changing the fill color of a shape
+							ctx.fill(); // render the path
+						</code>
+					</pre>
+						<img src="./assets/images/rect_3.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>rectangle</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="6">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.rect(10, 20, 150, 100); // add a rectangle to the current path
+							ctx.fillStyle = 'blue'; // changing the fill color of a shape
+							ctx.fill(); // render the path
+						</code>
+					</pre>
+						<img src="./assets/images/rect_4.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>arc</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="1 - 3">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath();
+							ctx.arc(100, 75, 50, 0, 1.5 * Math.PI);
+							ctx.lineWidth = 2;
+							ctx.strokeStyle ='blue';
+							ctx.stroke();
+						</code>
+					</pre>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>arc</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="4">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath();
+							ctx.arc(100, 75, 50, 0, 1.5 * Math.PI);
+							ctx.lineWidth = 2;
+							ctx.strokeStyle = 'blue';
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/arc_1.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>arc</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="4">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath();
+							ctx.arc(100, 75, 50, 0, 1.5 * Math.PI);
+							ctx.lineWidth = 2;
+							ctx.strokeStyle = 'blue';
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/arc_2.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>arc</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="4">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath();
+							ctx.arc(100, 75, 50, 0, 1.5 * Math.PI);
+							ctx.lineWidth = 2;
+							ctx.strokeStyle = 'blue';
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/arc_3.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>arc</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="5-7">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath();
+							ctx.arc(100, 75, 50, 0, 1.5 * Math.PI);
+							ctx.lineWidth = 2;
+							ctx.strokeStyle = 'blue';
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/arc_4.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>line</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="4">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.moveTo(30, 50); // move the pen to (30, 50)
+							ctx.lineTo(150, 100); // draw a line to (150, 100)
+							ctx.stroke(); // render the path
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/line_1.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>line</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="5">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.moveTo(30, 50); // move the pen to (30, 50)
+							ctx.lineTo(150, 100); // draw a line to (150, 100)
+							ctx.stroke(); // render the path
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/line_2.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>line</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="6">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.beginPath(); // start a new path
+							ctx.moveTo(30, 50); // move the pen to (30, 50)
+							ctx.lineTo(150, 100); // draw a line to (150, 100)
+							ctx.stroke(); // render the path
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/line_3.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>bézier curves</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="4-7 | 10" style="max-height: 160px;">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+
+							let start = { x: 50, y: 20 };
+							let cp1 = { x: 230, y: 30 };
+							let cp2 = { x: 150, y: 80 };
+							let end = { x: 250, y: 100 };
+
+							ctx.beginPath();
+							ctx.moveTo(start.x, start.y);
+							ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, end.x, end.y);
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/bezier_1.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>bézier curves</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="11" style="max-height: 160px;">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+
+							let start = { x: 50, y: 20 };
+							let cp1 = { x: 230, y: 30 };
+							let cp2 = { x: 150, y: 80 };
+							let end = { x: 250, y: 100 };
+
+							ctx.beginPath();
+							ctx.moveTo(start.x, start.y);
+							ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, end.x, end.y);
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/bezier_2.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>bézier curves</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="12" style="max-height: 160px;">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+
+							let start = { x: 50, y: 20 };
+							let cp1 = { x: 230, y: 30 };
+							let cp2 = { x: 150, y: 80 };
+							let end = { x: 250, y: 100 };
+
+							ctx.beginPath();
+							ctx.moveTo(start.x, start.y);
+							ctx.bezierCurveTo(cp1.x, cp1.y, cp2.x, cp2.y, end.x, end.y);
+							ctx.stroke();
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/bezier_3.png" alt="" style="width: 500px">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3>text</h3>
+					<div style="display: flex; gap: 10px; flex-direction: column; align-items: center;">
+						<pre data-id="code-animation">
+						<code class="hljs" data-trim data-line-numbers="3 | 4" style="max-height: 160px;">
+							const canvas = document.createElement("canvas");
+							const ctx = canvas.getContext("2d");
+							ctx.font = "48px serif";
+  						ctx.fillText("HELLO", 10, 50);
+						</code>
+					</pre>
+						<img data-auto-animate src="./assets/images/text_1.png" alt="" style="width: 500px">
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Canvas Rendering Model</h3>
+					<p class="subtitle" style="text-align: center;">The foundation of all Canvas animation</p>
+				</section>
+				<section>
+					<div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px; margin-top: 40px;">
+						<div>
+							<h5 style="color: #78c8fa;">How Drawing Works</h5>
+							<ul style="font-size: 0.6em; text-align: left;">
+								<li class="fragment fade-left"><strong>Immediate execution</strong><br>Draw → Pixels appear immediately
+								</li>
+								<li class="fragment fade-left" style="margin-top: 15px;"><strong>No object retention</strong><br>Canvas
+									"forgets" shapes after drawing</li>
+								<li class="fragment fade-left" style="margin-top: 15px;"><strong>Pixel persistence</strong><br>Pixels
+									remain until cleared or painted over</li>
+							</ul>
+						</div>
+
+						<div>
+							<h5 style="color: #ff6b6b;">The Animation Implication</h5>
+							<ul style="font-size: 0.6em; text-align: left;">
+								<li class="fragment fade-left"><strong>Manual frame management</strong><br>No built-in animation system
+								</li>
+								<li class="fragment fade-left" style="margin-top: 15px;"><strong>Complete redraw
+										required</strong><br>Each frame = clear + redraw everything</li>
+								<li class="fragment fade-left" style="margin-top: 15px;"><strong>60 FPS loop needed</strong><br>Constant
+									clearing → updating → drawing</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="fragment"
+						style="margin-top: 40px; padding: 20px; background: #2a2a2a; border-radius: 10px; border-left: 5px solid #78c8fa;">
+						<p style="margin: 0; font-size: 0.7em;">
+							<strong>In essence:</strong> Canvas doesn't animate objects—it shows a sequence of still images
+							(frames).<br>
+							<strong>Your job</strong> is to generate those frames 60 times per second.
+						</p>
+					</div>
+				</section>
+				<section>
+					<h3>Controlling animation</h3>
+					<ul>
+						<li class="fragment highlight-red">
+							<code>while()</code>
+						</li>
+						<li class="fragment fade-left">
+							<code data-trim><span style="color: #a6e22e;">setTimeout</span>()</code> /
+							<code><span style="color: #a6e22e;">setInterval</span>()</code> —
+							time-based, not frame-based
+						</li>
+						<li class="fragment fade-left">
+							<code><span style="color: #a6e22e;">requestAnimationFrame</span>()</code> — synced with screen refresh
+							rate
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3><code>requestAnimationFrame</code></h3>
+					<p class="subtitle">why is this better?</p>
+					<ul>
+						<li class="fragment fade-left">synchronizes animation with screen refresh (~60 FPS)</li>
+						<li class="fragment fade-left">automatically pauses when tab is inactive</li>
+						<li class="fragment fade-left">optimized for smooth motion, avoids frame skipping</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Modern Animation Loop</h3>
+					<pre data-id="code-animation">
+						<code class="hljs javascript" data-trim data-line-numbers="1-15 | 1 | 3-5 | 7-8 | 10-11 | 13-14 | 16-17 ">
+							let lastTime = 0;
+							function animate(timestamp) {
+							    // 1. Calculate deltaTime - time since the last frame
+							    const deltaTime = (timestamp - lastTime) / 1000;
+							    lastTime = timestamp;
+							
+							    // 2. Clear (can be partial)
+							    ctx.clearRect(0, 0, canvas.width, canvas.height);
+							
+							    // 3. Update logic based on time
+							    update(deltaTime);
+							
+							    // 4. Draw
+							    draw();
+							
+							    // 5. Request next frame
+							    requestAnimationFrame(animate);
+							}
+							requestAnimationFrame(animate);
+    				</code>
+					</pre>
+					<p class="fragment"><strong>DeltaTime</strong> makes animation frame-rate independent. Movement will be smooth
+						at both 30 FPS and 144 FPS.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Game Loop: The Heartbeat of a Game</h3>
+					<img src="./assets/images/game-loop.png" alt="Game Loop Diagram" style="width: 400px;">
+					<p class="fragment" style="margin-top: 20px;"><em>A simple pattern that runs 60 times per second</em></p>
+				</section>
+
+				<section>
+					<h4>1. Process Input</h4>
+					<p style="font-size: 0.9em;">Check what keys are pressed right now</p>
+					<pre>
+						<code class="hljs javascript" style="font-size: 0.8em;" data-trim>
+							const keys = {};
+							window.addEventListener('keydown', e => keys[e.code] = true);
+							window.addEventListener('keyup', e => keys[e.code] = false);
+        		</code>
+					</pre>
+					<div class="fragment">
+						<p style="font-size: 0.8em; margin-top: 20px;"><strong>Simple example:</strong></p>
+						<pre>
+							<code class="hljs javascript" style="font-size: 0.7em;" data-trim>
+								// Later in our game loop:
+								let moveLeft = keys['ArrowLeft'];
+								let moveRight = keys['ArrowRight'];
+	            </code>
+						</pre>
+					</div>
+				</section>
+
+				<section>
+					<h4>2. Update Game State (with Time!)</h4>
+					<p style="font-size: 0.9em;">Calculate how much time passed since last frame</p>
+					<div class="r-stack">
+						<pre class="fragment fade-out">
+							<code class="hljs javascript" style="font-size: 0.8em;" data-trim>
+								let lastTime = 0;
+							
+								function update(currentTime) {
+								    // Calculate deltaTime (in SECONDS!)
+								    const deltaTime = (currentTime - lastTime) / 1000;
+								    lastTime = currentTime;
+								
+								    // Apply movement based on TIME, not frames
+								    const speed = 300; // pixels per second
+								
+								    if (keys['ArrowLeft']) {
+								        player.x -= speed * deltaTime;
+								    }
+								    if (keys['ArrowRight']) {
+								        player.x += speed * deltaTime;
+								    }
+									
+								    // Update other game objects...
+								}
+        			</code>
+						</pre>
+
+						<p class="fragment fade-in"
+							style="font-size: 0.8em; background: #2a2a2a; padding: 10px; border-radius: 5px;">
+							<strong>Key idea:</strong> <code>speed * deltaTime</code><br>
+							If 0.016 seconds passed (60 FPS): 300 × 0.016 = 4.8 pixels<br>
+							If 0.033 seconds passed (30 FPS): 300 × 0.033 = 9.9 pixels<br>
+							<em>Both give 300 pixels after 1 full second!</em>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<h4>3. Render (Draw Everything)</h4>
+					<p style="font-size: 0.9em;">Clear and redraw the entire scene</p>
+
+					<pre>
+						<code class="hljs javascript" style="font-size: 0.8em;" data-trim>
+							function render() {
+							    // 1. Clear the entire canvas
+							    ctx.clearRect(0, 0, canvas.width, canvas.height);
+							
+							    // 2. Draw player at its NEW position
+							    ctx.fillStyle = 'blue';
+							    ctx.fillRect(player.x, player.y, 40, 40);
+							
+							    // 3. Draw enemies, background, UI...
+							}
+        		</code>
+					</pre>
+
+					<div class="fragment">
+						<p style="font-size: 0.8em; margin-top: 20px;"><strong>The complete loop:</strong></p>
+						<pre>
+							<code class="hljs javascript" style="font-size: 0.7em;" data-trim>
+								function gameLoop(currentTime) {
+								    update(currentTime);   // Update positions
+								    render();              // Draw everything
+								    requestAnimationFrame(gameLoop); // Repeat!
+								}
+								requestAnimationFrame(gameLoop); // Start the engine!
+            	</code>
+						</pre>
+					</div>
+				</section>
+
+				<section>
+					<h3>Game Loop Summary</h3>
+					<div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+						<div style="text-align: left; font-size: 0.9em;">
+							<p><strong style="color: #78c8fa;">1. Process Input</strong><br>What is the player doing?</p>
+							<p><strong style="color: #78c8fa;">2. Update</strong><br>Move objects using <code>deltaTime</code></p>
+							<p><strong style="color: #78c8fa;">3. Render</strong><br>Draw everything in new positions</p>
+							<p><strong style="color: #78c8fa;">4. Repeat</strong><br><code>requestAnimationFrame</code> keeps it
+								running</p>
+						</div>
+						<img src="./assets/images/game-loop.png" alt="Game Loop Diagram" style="width: 300px;">
+					</div>
+				</section>
+			</section>
+			<section style="font-size: 0.7em;">
+				<h2>Conclusion: The Canvas Mindset</h2>
+				<div class="fragment fade-left" style="text-align: left; font-size: 0.9em; line-height: 1.4; margin-top: 40px;">
+					<p>Canvas is more than an API — it's a paradigm shift.</p>
+					<p class="fragment fade-left" style="margin-top: 20px;">You move from declarative DOM to <strong>programmatic
+							pixel
+							control</strong>.</p>
+					<p class="fragment fade-left" style="margin-top: 20px;">You orchestrate time through the <strong>Game
+							Loop</strong> —
+						mastering every frame with `requestAnimationFrame` and `deltaTime`.</p>
+					<p class="fragment fade-left" style="margin-top: 20px;">The reward? <strong>Ultimate creative freedom</strong>
+						to build
+						rich, immersive experiences directly in the browser.</p>
+				</div>
+				<div class="fragment fade-left" style="margin-top: 50px; font-size: 0.8em; color: #78c8fa;">
+					<p><em>You're not just using the browser — you're building its visual engine.</em></p>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			progress: false,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
